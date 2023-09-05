@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Custom Events</title>
+</head>
+<body>
+    <p>Hello world</p>
+
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script>
+        const socket = io();
+
+        // Receive message from server to client
+        //socket.on('message', (data) => {
+        //    document.write(data);
+        //});
+
+        // Receive message from server to client
+        // custom event listen
+        //socket.on('mycustomevent', (data) => {
+        //   document.write(data.message);
+        //});
+
+        // Send message from client to server
+        socket.emit('mycustomevent', { message: 'Hi from client.' });
+    </script>
+</body>
+</html>

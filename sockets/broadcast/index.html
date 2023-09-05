@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Broadcast</title>
+</head>
+<body>
+    <p>Broadcast | socket io</p>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        // ============= global broadcast
+        //socket.on('broadcast', (data) => {
+        //    document.body.innerHTML = '';
+        //    document.write(data.message);
+        //});
+
+        // ============== // current user showing welcome message | other connected will showing num of connections
+        socket.on('mycustomevent', (data) => {
+            document.body.innerHTML = '';
+            document.write(data.message);
+        });
+    </script>
+</body>
+</html>
